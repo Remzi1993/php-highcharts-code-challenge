@@ -12,7 +12,7 @@ $router->setBasePath('');
 // Routes
 $router->addRoutes(array(
   array( 'GET', '/', function() { require DIR_PATH . '/content/index.php'; } ),
-  array( 'GET', '/phpinfo', function() { require DIR_PATH . '/content/tools/info.php'; } )
+  array( 'GET', '/info', function() { require DIR_PATH . '/content/tools/info.php'; } )
 ));
 
 // match current request url
