@@ -1,2 +1,1 @@
-# php-highcharts-code-challenge
-PHP Code Challenge with Highcharts
+# PHP Code Challenge with Highcharts
