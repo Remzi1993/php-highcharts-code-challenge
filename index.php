@@ -12,7 +12,12 @@ $router->setBasePath('');
 // Routes
 $router->addRoutes(array(
   array( 'GET', '/', function() { require DIR_PATH . '/content/index.php'; } ),
-  array( 'GET', '/info', function() { require DIR_PATH . '/content/tools/info.php'; } )
+  array( 'GET', '/php', function() { require DIR_PATH . '/content/tools/info.php'; } ),
+  array( 'GET', '/php/', function() { require DIR_PATH . '/content/tools/info.php'; } ),
+  array( 'GET', '/example/', function() { require DIR_PATH . '/example/index.php'; } ),
+  array( 'GET', '/example', function() { require DIR_PATH . '/example/index.php'; } ),
+  array( 'GET', '/test', function() { require DIR_PATH . '/test/index.php'; } ),
+  array( 'GET', '/test/', function() { require DIR_PATH . '/test/index.php'; } )
 ));
 
 // match current request url

@@ -2,26 +2,50 @@
 // Header
 require DIR_PATH . '/template-parts/header.php';
 
-// $file = DIR_PATH . '/data/sales2.csv';
-// $csv = file_get_contents($file);
-// $array = array_map( "str_getcsv", explode("\n", $csv) );
-// $json = json_encode($array);
-// print_r($json);
+
+function process_csv($file) {
+
+    $file = fopen($file, 'r');
+    $data = array();
+
+    while (!feof($file)) {
+        $data[] = fgetcsv($file,null,';');
+    }
+
+    fclose($file);
+    return $data;
+}
+
+// Set path to CSV file
+$csv_file = DIR_PATH . '/data/sales2.csv';
+$csv = process_csv($csv_file);
 
 
-// $csv = array_map('str_getcsv', file( DIR_PATH . '/data/sales2.csv' ));
+
+// echo $csv[1][1];
+// echo count($csv);
+//
+// for ($row = 0; $row < 8; $row++) {
+//   echo "<p><b>Row number $row</b></p>";
+//   echo "<ul>";
+//   for ($col = 0; $col < 4; $col++) {
+//     echo "<li>".$csv[$row][$col]."</li>";
+//   }
+//   echo "</ul>";
+// }
+
+// array_shift($csv);
+
+
+// echo '<pre>';
 // print_r($csv);
+// echo '</pre>';
 
 
-// $myObj->name = "John";
-// $myObj->age = 30;
-// $myObj->city = "New York";
-//
-// $myJSON = json_encode($myObj);
-//
-// echo $myJSON;
-// exit;
-
+// $json = json_encode($csv);
+// echo '<pre>';
+// print_r($json);
+// echo '</pre>';
 
 ?>
 <div class="container">

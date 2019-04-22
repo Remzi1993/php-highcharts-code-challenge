@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var chartOptions = {
         chart: {
-            renderTo: 'chart'
+            renderTo: 'container'
         },
         title: {
             text: 'Monthly turnover 2018'
