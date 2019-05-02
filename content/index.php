@@ -20,6 +20,9 @@ function process_csv($file) {
 $csv_file = DIR_PATH . '/data/sales2.csv';
 $csv = process_csv($csv_file);
 
+// Remove csv header
+array_shift($csv);
+
 
 
 // echo $csv[1][1];
@@ -34,12 +37,20 @@ $csv = process_csv($csv_file);
 //   echo "</ul>";
 // }
 
-// array_shift($csv);
 
 
-// echo '<pre>';
-// print_r($csv);
-// echo '</pre>';
+
+
+function compareByProductName($a, $b) {
+  return strcmp($a[0], $b["Teddybear"]);
+}
+usort($csv, 'compareByProductName');
+
+
+
+echo '<pre>';
+print_r($csv);
+echo '</pre>';
 
 
 // $json = json_encode($csv);
@@ -47,6 +58,7 @@ $csv = process_csv($csv_file);
 // print_r($json);
 // echo '</pre>';
 
+exit;
 ?>
 <div class="container">
     <div class="row">
